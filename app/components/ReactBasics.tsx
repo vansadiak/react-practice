@@ -22,7 +22,7 @@ interface UserProps {
 // Functional component (modern React approach)
 export const UserCard = ({ user, onUserClick }: UserProps) => {
     return (
-        <div className='rounded-sm border-2 p-4 mb-2 w-1/4 m-auto' >
+        <div className='rounded-sm shadow-xs bg-gray-50 p-4 mb-6 w-1/4 m-auto' >
             <div >
                 <ul>
                     <li>
@@ -104,7 +104,7 @@ export function UserList() {
 
     return (
         <div className="p-4 text-center">
-            <h2 className="text-xl font-bold mb-4">User List</h2>
+            <h2 className="text-xl font-bold mt-4 mb-4">User List</h2>
 
 
             {

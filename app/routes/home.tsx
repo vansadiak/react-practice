@@ -1,4 +1,7 @@
 import { Link } from "react-router";
+import { StatusBar } from "~/components/status";
+import { FaReact } from "react-icons/fa";
+import { Links } from "~/components/Links";
 
 export function meta() {
   return [
@@ -7,47 +10,37 @@ export function meta() {
   ];
 }
 
+
+
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">React Playground</h1>
-          <p className="text-xl text-gray-600">Explore different React components and patterns</p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          <Link 
-            to="/todo" 
-            className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-          >
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">Todo List</h2>
-              <p className="text-gray-600">Manage todos with filtering, editing, and local storage</p>
-            </div>
-          </Link>
-          
-          <Link 
-            to="/react-basics" 
-            className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-          >
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">React Basics</h2>
-              <p className="text-gray-600">Learn React fundamentals with user list example</p>
-            </div>
-          </Link>
-          
-          <Link 
-            to="/tic-tac-toe" 
-            className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-          >
-            <div className="text-center">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-2">Tic Tac Toe</h2>
-              <p className="text-gray-600">Play Tic Tac Toe with score tracking</p>
-            </div>
-          </Link>
+  return (<>
+    <StatusBar />
+    <div className="m-auto mt-10 mb-10 p-8 flex flex-col items-center justify-center text-center">
+      <div className=" items-center justify-center mb-10 relative ">
+        <div className="text-4xl font-bold flex mb-2 items-center gap-2">
+          <div className="w-full">
+            <span className="text-blue-500">React</span> Playground
+          </div>
+          <span className="text-blue-500 absolute right-[-20px] top-0">
+            <FaReact className="duration-300 animate-pulse " style={{ animationDuration: '1s' }} />
+          </span></div>
+        <p className="text-lg">Explore Different Components and Patterns</p>
+      </div>
+          <div className="flex rounded-l flex-col bg-gray-50 hover:bg-gray-100 transition-all duration-300 p-4 items-center justify-center w-1/2 gap-8 relative overflow-hidden">
+        <img
+          src="https://illustrations.popsy.co/amber/engineer.svg"
+          alt="React Development Team"
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
+          style={{ zIndex: 0 }}
+        />
+        <div className="relative z-10 flex flex-col gap-8">
+          <Links url="/todo">Todo List</Links>
+          <Links url="/react-basics">User List</Links>
+          <Links url="/tic-tac-toe">Tic Tac Toe</Links>
         </div>
       </div>
     </div>
+    </>
+    
   );
 }

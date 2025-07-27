@@ -56,7 +56,7 @@ const SingleSelectFilter = <T,>({ filter, setFilterModel, onClose }: TSingleSele
     };
 
     return (
-        <div className="p-4 border rounded">
+        <div >
             {filter.filterValue.map((value) => (
                 <label key={value.key} className="flex items-center gap-2 mb-1">
                     <input
@@ -95,9 +95,9 @@ const FilterModal = <T,>({ filter, onClose, setFilterModel, buttonRef }: TFilter
     if (!filter.isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-50" onClick={onClose}>
+        <div className="fixed inset-0 z-50 shadow-md" onClick={onClose}>
             <div
-                className="absolute bg-white p-4 rounded min-w-[300px] shadow-lg border"
+                className="absolute  p-4 rounded min-w-[300px] shadow-lg bg-gray-50"
                 style={{
                     top: buttonRef.current ? `${buttonRef.current.getBoundingClientRect().bottom + 5}px` : '50%',
                     left: buttonRef.current ? `${buttonRef.current.getBoundingClientRect().left}px` : '50%',

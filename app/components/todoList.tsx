@@ -36,7 +36,7 @@ interface ITodoProps {
 
 const Todo = ({ todo, onTodoAction }: ITodoProps) => {
     return (
-        <div className="flex gap-2 border-2 border-grey-300 rounded-md p-2 mb-4 relative">
+        <div className="flex gap-2 border-grey-300 rounded-md p-4 mb-4 relative">
             <div>
                 <input 
                     type="checkbox" 
@@ -62,7 +62,7 @@ const Todo = ({ todo, onTodoAction }: ITodoProps) => {
                     todo.isEditing ? (
                         <div>
                             <textarea 
-                                className="border-2 rounded-md p-2 w-full" 
+                                className="border-1 rounded-md p-2 w-full" 
                                 value={todo.description} 
                                 onChange={(e) => onTodoAction({ type: 'UPDATE_DESCRIPTION', id: todo.id, description: e.target.value })} 
                             />
@@ -72,7 +72,7 @@ const Todo = ({ todo, onTodoAction }: ITodoProps) => {
                     )
                 }
             </div>
-            <div className="flex gap-2 m-2 bg-white rounded-md p-2">
+            <div className="flex gap-2 m-2 bg-white rounded-md p-2 h-1/2">
                 <div className="flex">
                     {
                         !todo.isEditing ? (
@@ -196,7 +196,7 @@ export const TodoList = () => {
 
     return (
         <>
-            <div className='m-auto mt-10 mb-10 w-6/8 h-[80vh] relative border-2 border-blue-300 rounded-md p-8 flex flex-col'>
+            <div className='m-auto mt-10 mb-10 w-6/8 h-[80vh] relative shadow-md bg-gray-50 rounded-md p-8 flex flex-col'>
                 <div className='text-center text-xl font-semibold h-[10%] flex items-center justify-center'>
                     {todoListModel.title}
                 </div>

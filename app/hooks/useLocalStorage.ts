@@ -15,7 +15,8 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
             return;
         }
         setStoredValue(value);
-        localStorage.setItem(key, JSON.stringify(typeof value === 'function' ? value(storedValue) : value));
+        const valueToStore = value instanceof Function ? value(storedValue) : value;
+        localStorage.setItem(key, JSON.stringify(valueToStore));
     }
 
     return [storedValue, setValue] as const;
