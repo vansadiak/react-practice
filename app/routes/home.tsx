@@ -1,5 +1,8 @@
 import type { Route } from "./+types/home";
 import { Welcome } from "../welcome/welcome";
+import { UserList } from "../components/ReactBasics";
+import { MainGrid } from "../components/TicTacToe";
+import { TodoList } from "~/components/todoList";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +12,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return (
+    <div>
+      <TodoList />
+    </div>
+  );
 }
