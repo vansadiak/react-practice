@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 // Props interface (like Angular @Input())
 interface User {
@@ -42,10 +43,13 @@ export const UserCard = ({ user, onUserClick }: UserProps) => {
 
                 </ul>
             </div>
-            <div className='text-right'>
-                <button className='rounded-sm border-1 p-2' onClick={() => onUserClick(user)}>
+            <div className='text-right flex justify-end'>
+                <button className=' flex items-center gap-2 rounded-sm border-1 p-2' onClick={() => onUserClick(user)}>
                     {
-                        user.showExtraDetails ? 'Collapse' : 'Expand'
+                        user.showExtraDetails ? <FaChevronUp className='text-blue-500' /> : <FaChevronDown className='text-blue-500' />
+                    }
+                    {
+                       <span className='text-blue-500'>{user.showExtraDetails ? 'Collapse' : 'Expand'}</span>
                     }
                 </button>
 

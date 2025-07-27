@@ -196,7 +196,7 @@ export const TodoList = () => {
 
     return (
         <>
-            <div className='m-auto mt-10 mb-10 w-6/8 h-[90vh] relative border-2 border-blue-300 rounded-md p-8 flex flex-col'>
+            <div className='m-auto mt-10 mb-10 w-6/8 h-[80vh] relative border-2 border-blue-300 rounded-md p-8 flex flex-col'>
                 <div className='text-center text-xl font-semibold h-[10%] flex items-center justify-center'>
                     {todoListModel.title}
                 </div>
